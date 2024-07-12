@@ -1,5 +1,5 @@
 variable "project" {
-  default     = "guru-playground"
+  default     = "braided-pride-413213"
   description = "The project ID"
 }
 

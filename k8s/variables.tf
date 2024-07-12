@@ -17,7 +17,7 @@ variable "k8s_tier" {
   description = "The instance tiers are based on the machine"
 }
 variable "k8s_tier_node_count" {
-  default     = 2
+  default     = 1
   description = "The nodes in this pool"
 }
 

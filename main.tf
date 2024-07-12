@@ -42,5 +42,5 @@ module "dev_k8s" {
   k8s_service_account_name       = "dev-k8s-cluster-ser-ac"
   k8s_cluster_logging_service    = "logging.googleapis.com/kubernetes"
   k8s_cluster_monitoring_service = "monitoring.googleapis.com/kubernetes"
-  k8s_tier_node_count            = 3
+  k8s_tier_node_count            = 2
 }

@@ -100,6 +100,7 @@ resource "google_container_cluster" "cluster" {
   monitoring_service       = var.k8s_cluster_monitoring_service
   networking_mode          = "VPC_NATIVE"
   node_locations           = var.k8s_additional_node_zones
+  deletion_protection      = false
 
   addons_config {
     http_load_balancing {
@@ -174,6 +175,7 @@ resource "google_container_node_pool" "general" {
   node_config {
     preemptible  = false
     machine_type = var.k8s_tier
+    disk_size_gb = 50
     labels = {
       role = "general"
     }
@@ -189,7 +191,7 @@ resource "google_container_node_pool" "general" {
 resource "google_container_node_pool" "spot" {
   name       = "spot"
   cluster    = google_container_cluster.cluster.id
-  node_count = var.k8s_tier_node_count
+  node_count = 0
 
   management {
     auto_repair  = true
@@ -204,6 +206,7 @@ resource "google_container_node_pool" "spot" {
   node_config {
     preemptible  = true
     machine_type = var.k8s_spot_tier
+    disk_size_gb = 50
 
     labels = {
       team = "spot"
