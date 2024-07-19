@@ -43,14 +43,14 @@
         ```    
 1. **Create ingress**
     * > kubectl create -f app/app.yaml
-    * > kubectl create -f app/kcert-demo.yaml
+    * > kubectl create -f app/ingress.yaml
     * > kubectl get secrets -A 
         ```
         NAME                     TYPE                  
-        kcert-agileguru-org      kubernetes.io/tls
+        sourav-alacritysys-com      kubernetes.io/tls
         ```
 
 1. **Check Your app**
-    * Open Your App in the browser ( https://kcert.agileguru.org )
+    * Open Your App in the browser ( https://sourav.alacritysys.com )
     * Should show valid certificate :) 
     * Certificate issued by https://letsencrypt.org/
